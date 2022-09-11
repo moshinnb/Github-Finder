@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {AiFillWarning}  from 'react-icons/ai'
-import PropTypes from 'prop-types'
-const Alert = ({closefun,alert}) => {
-    
-  return (
+import AlertContext from '../../context/alert/alertContext'
+const Alert = () => {
+    const alertContext=useContext(AlertContext);
+    const {closefun,alert}=alertContext;
+  
+    return (
     alert!= null &&(
     <div className="p-3 mb-2 bg-warning text-dark"> 
         <AiFillWarning/> {alert.msg}  
@@ -14,11 +16,6 @@ const Alert = ({closefun,alert}) => {
   )
   )
 }
-Alert.propType={
-    closefun:PropTypes.func.isRequired
-}
 
-// <button type="button" class="close" aria-label="Close" >
-//             <span aria-hidden="true" onClick={this.props.closefun}>&times;</span>
-//         </button>
+
 export default Alert

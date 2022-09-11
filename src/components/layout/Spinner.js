@@ -1,6 +1,6 @@
 import React,{Fragment} from 'react'
-import Users from '../Users';
-import PropTypes from 'prop-types'
+
+
 import spinner from './loading_gif.gif';
 const Spinner = () => {
   return (
